@@ -30,5 +30,14 @@ function animate() {
   cube.rotation.y += 0.01;
   renderer.render(scene, camera);
 }
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+window.addEventListener('resize', onWindowResize);
+
 init();
 animate();
